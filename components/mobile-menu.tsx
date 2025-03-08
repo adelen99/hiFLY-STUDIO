@@ -24,17 +24,18 @@ export function MobileMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' size='icon'>
-          <Menu className='h-5 w-5' />
-          <span className='sr-only'>Toggle menu</span>
+        <Button variant="ghost" size="icon">
+          <Menu className="!h-6 !w-6" />
+          <span className="sr-only">Toggle menu</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align='start' className='w-48'>
+      <DropdownMenuContent align="start" className="w-48">
         {navLinks.map((link) => (
           <DropdownMenuItem
             key={link.id}
             onClick={() => scrollToSection(link.id)}
-            className='cursor-pointer'>
+            className="cursor-pointer"
+          >
             {link.title}
           </DropdownMenuItem>
         ))}

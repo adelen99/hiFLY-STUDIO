@@ -41,7 +41,7 @@ export const Navbar = () => {
     <div className="h-20 flex items-center relative">
       {/* Mobile Menu (left side on small screens) */}
       {isSmallScreen && (
-        <div className="sm:hidden absolute left-4 z-10">
+        <div className="md:hidden absolute left-4 z-10">
           <MobileMenu />
         </div>
       )}
@@ -68,7 +68,7 @@ export const Navbar = () => {
       )}
 
       {/* Navigation Links (hidden on small screens) */}
-      <nav className="hidden sm:flex items-center gap-8 ml-auto">
+      <nav className="hidden md:flex items-center gap-8 ml-auto">
         {navLinks.map((link) => (
           <a
             key={link.id}

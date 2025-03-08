@@ -5,7 +5,7 @@ import Portofoliu from "@/components/Portofoliu";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center min-h-screen">
       {/* Hero section */}
       <section id="hero" className="bg-black">
         <Hero />
