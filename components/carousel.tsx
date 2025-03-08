@@ -59,34 +59,38 @@ export function CarouselPortofoliu() {
   return (
     <Carousel
       setApi={setApi}
-      className='w-full max-w-7xl'
+      className="w-full max-w-7xl sm:p-2 p-4"
       opts={{
         align: "center",
         loop: true,
-      }}>
-      <CarouselContent className='-ml-4'>
+      }}
+    >
+      <CarouselContent className="-ml-4 ">
         {videos.map((videoSrc, index) => (
           <CarouselItem
             key={index}
-            className='pl-4 md:basis-1/2 lg:basis-2/5 transition-all duration-300'>
-            <div className='p-1'>
+            className="pl-4 md:basis-1/2 lg:basis-2/5 transition-all duration-300"
+          >
+            <div className="p-1">
               <Card
                 className={`transition-all duration-300 ${
                   index === currentIndex
                     ? "scale-100 z-10"
                     : "scale-[0.85] opacity-70"
-                }`}>
-                <CardContent className='p-0 overflow-hidden aspect-[2/3]'>
+                }`}
+              >
+                <CardContent className="p-0 overflow-hidden aspect-[2/3]">
                   <video
                     src={videoSrc}
-                    className='w-full h-full object-cover'
+                    className="w-full h-full object-cover"
                     muted
                     playsInline
-                    loop>
+                    loop
+                  >
                     Your browser does not support the video tag.
                   </video>
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <span className='text-2xl font-semibold bg-background/80 p-2 rounded'>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-2xl font-semibold bg-background/80 p-2 rounded">
                       {index + 1}
                     </span>
                   </div>
@@ -96,8 +100,8 @@ export function CarouselPortofoliu() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className='left-0' />
-      <CarouselNext className='right-0' />
+      <CarouselPrevious className="sm:left-0 left-6 " />
+      <CarouselNext className="sm:right-0 right-6" />
     </Carousel>
   );
 }

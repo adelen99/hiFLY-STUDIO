@@ -4,6 +4,7 @@ import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,24 +27,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
-          disableTransitionOnChange>
-          <div className='min-h-screen flex flex-col'>
-            <header className='fixed top-0 left-0 right-0 z-50 bg-background border-b'>
-              <div className='sm:px-8 md:px-12 lg:px-20 mx-auto w-full max-w-7xl'>
+          disableTransitionOnChange
+        >
+          <div className="min-h-screen flex flex-col">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b">
+              <div className="sm:px-8 md:px-12 lg:px-20 mx-auto w-full max-w-7xl">
                 <Navbar />
               </div>
             </header>
-            <main className='w-full'>{children}</main>
+            <main className="w-full">{children}</main>
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
-} 
+}
