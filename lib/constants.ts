@@ -1,5 +1,3 @@
-import { FaInstagram } from "react-icons/fa"; // Instagram icon from FontAwesome
-
 // Interfața pentru nav links
 interface navLinksProps {
   href: string;
