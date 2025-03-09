@@ -14,6 +14,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SendIcon } from "lucide-react";
+import { toast } from "sonner";
+import { sendEmail } from "@/lib/resend";
 
 const formSchema = z.object({
   nume: z
@@ -33,8 +35,19 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      await sendEmail({
+        name: values.nume,
+        email: values.email,
+        message: values.mesaj,
+      });
+      toast("Mesajul tau a fost trimis cu succes!");
+      form.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast("A aparut o eroare la trimiterea mesajului. Incercati din nou.");
+    }
   };
 
   return (
