@@ -35,8 +35,7 @@ const Footer = () => {
       ></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
-          {/* Social media */}
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-24">
           <div className="flex flex-row md:flex-col gap-6 md:gap-4">
             <Link
               href="https://www.instagram.com"
@@ -68,9 +67,7 @@ const Footer = () => {
               </span>
             </Link>
           </div>
-
-          {/* Copyright */}
-          <div className="order-2 md:order-3 mt-6 md:mt-0">
+          <div className="order-2  mt-6 md:mt-0">
             <div className="flex flex-col items-center md:items-end">
               <div className="text-slate-300 text-sm md:text-base font-medium">
                 &copy; {new Date().getFullYear()} hiFLY-STUDIO
@@ -81,7 +78,7 @@ const Footer = () => {
             </div>
           </div>
           {/* Linkuri catre sectiuni */}
-          <div className="order-3 md:order-2 mt-6 md:mt-0">
+          <div className="order-3  mt-6 md:mt-0">
             <ul className="flex flex-col items-center md:items-start gap-3">
               <li>
                 <Link
